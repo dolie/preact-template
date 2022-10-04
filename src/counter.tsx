@@ -1,4 +1,4 @@
-import {useSignal, useComputed} from '@preact/signals'
+import { useSignal, useComputed } from '@preact/signals'
 import preactLogo from './assets/preact.svg'
 
 export function Counter(){
@@ -8,7 +8,11 @@ export function Counter(){
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
+        <a
+          href="https://vitejs.dev"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src="/vite.svg" class="logo" alt="Vite logo" />
         </a>
         <a href="https://preactjs.com" target="_blank" rel="noreferrer">

@@ -1,8 +1,8 @@
 // import { useState } from 'preact/hooks'
-import {Router, Route } from 'preact-router'
+import { Router, Route } from 'preact-router'
 import { Counter } from './counter'
-import './app.css'
 import { About } from './about'
+import './app.css'
 
 export function App() {
 

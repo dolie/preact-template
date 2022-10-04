@@ -12,13 +12,23 @@
     "no-unused-vars": "off",
     "no-use-before-define": "off",
     "@typescript/no-use-before-define": "off",
-    "react/jsx-indent": [
-      2,
-      2
-    ],
-    "react/jsx-indent-props": [
-      2,
-      2
-    ]
+    "object-curly-spacing": ["error", "always"],
+    "array-bracket-spacing": ["error", "never"],
+    "max-len": ["error", {
+      "code" : 80,
+      "ignoreTrailingComments": true
+    }],
+
+    // -- react eslint rules
+    "react/jsx-indent": [2, 2],
+    "react/jsx-indent-props": [2, 2],
+    "react/jsx-max-props-per-line": ["error", {
+      "maximum": {
+        "single": 3,
+        "multi": 1
+      }
+    }],
+    "react/jsx-first-prop-new-line": ["error", "multiline"],
+    "react/jsx-closing-bracket-location": [2, "line-aligned"]
   }
 }
