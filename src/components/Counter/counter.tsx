@@ -1,5 +1,6 @@
+import "./counter.css"
 import { useSignal, useComputed } from '@preact/signals'
-import preactLogo from './assets/preact.svg'
+import preactLogo from '@/assets/svg/preact.svg'
 
 export function Counter(){
   const count = useSignal(0)

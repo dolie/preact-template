@@ -1,27 +1,33 @@
 // import { useState } from 'preact/hooks'
-import { Router, Route } from 'preact-router'
-import { Counter } from './counter'
-import { About } from './about'
+import '@/assets/css/reset.css'
 import './app.css'
 
-export function App() {
+import { render } from 'preact'
+import { Router, Route } from 'preact-router'
+import { Counter } from './components/Counter/counter'
+import { About } from './components/About/about'
+
+import { createClient, Provider } from '@urql/preact';
+import { Layout } from './components/Layout/layout'
+
+const client = createClient({
+  url: 'https://rickandmortyapi.com/graphql'
+});
+
+function App() {
 
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/about">about</a>
-          </li>
-        </ul>
-      </nav>
-      <Router>
-        <Route path="/" component={Counter} />
-        <Route path="/about" component={About} />
-      </Router>
+      <Provider value={client}>
+        <Layout>
+          <Router>
+            <Route path="/" component={Counter} />
+            <Route path="/about" component={About} />
+          </Router>
+        </Layout>
+      </Provider>
     </>
   )
 }
+
+render(<App />, document.getElementById('app') as HTMLElement)

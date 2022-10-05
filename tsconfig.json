@@ -15,7 +15,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "preact"
+    "jsxImportSource": "preact",
+    "baseUrl": ".",
+    "paths": {
+      "@/*" : ["src/*"]
+    },
+    "typeRoots": ["node_modules/@types", "src/@types"],
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
