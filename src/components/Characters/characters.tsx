@@ -26,7 +26,7 @@ export function Characters({ species }: {species: Species}){
           <img src={c.image} alt={`${c.name  } avatar`} />
           <p>{c.name}</p>
         </li>
-        ))}
+      ))}
     </ul>
   )
 }

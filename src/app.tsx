@@ -14,7 +14,7 @@ const client = createClient({
   url: 'https://rickandmortyapi.com/graphql'
 });
 
-function App() {
+function App(){
 
   return (
     <>

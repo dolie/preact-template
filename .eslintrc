@@ -4,6 +4,9 @@
     "preact"
   ],
   "rules": {
+    "indent": ["error", 2],
+    "space-infix-ops": "error",
+    "space-before-blocks": ["error", "never"],
     "jsx-quotes": [
       "error",
       "prefer-double"
@@ -18,10 +21,12 @@
       "code" : 80,
       "ignoreTrailingComments": true
     }],
+    "multiline-ternary": ["error", "always-multiline"],
+    "operator-linebreak": ["error", "before"],
 
     // -- react eslint rules
-    "react/jsx-indent": [2, 2],
-    "react/jsx-indent-props": [2, 2],
+    "react/jsx-indent": ["error", 2, {"checkAttributes": true, "indentLogicalExpressions": true}],
+    "react/jsx-indent-props": ["error", 2],
     "react/jsx-max-props-per-line": ["error", {
       "maximum": {
         "single": 3,
@@ -29,6 +34,7 @@
       }
     }],
     "react/jsx-first-prop-new-line": ["error", "multiline"],
-    "react/jsx-closing-bracket-location": [2, "line-aligned"]
+    "react/jsx-closing-bracket-location": ["error", "line-aligned"],
+    "react/jsx-curly-spacing": ["error", {"when": "never", "children": true}]
   }
 }
