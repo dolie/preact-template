@@ -20,13 +20,19 @@ export function Characters({ species }: {species: Species}){
   if (error) return <p>Oh no... {error.message}</p>;
 
   return (
-    <ul>
-      {data.characters.results.map((c: Character)=> (
-        <li key={c.id}>
-          <img src={c.image} alt={`${c.name  } avatar`} />
-          <p>{c.name}</p>
-        </li>
-      ))}
-    </ul>
+    <>
+      <button onClick={() => reexecuteQuery({ requestPolicy: 'network-only' })}>
+        Refetch without cache
+      </button>
+      
+      <ul>
+        {data.characters.results.map((c: Character)=> (
+          <li key={c.id}>
+            <img src={c.image} alt={`${c.name  } avatar`} />
+            <p>{c.name}</p>
+          </li>
+        ))}
+      </ul>
+    </>
   )
 }

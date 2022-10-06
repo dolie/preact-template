@@ -18,14 +18,14 @@ function App(){
 
   return (
     <>
-      <Provider value={client}>
-        <Layout>
+      <Layout>
+        <Provider value={client}>
           <Router>
             <Route path="/" component={Counter} />
             <Route path="/about" component={About} />
           </Router>
-        </Layout>
-      </Provider>
+        </Provider>
+      </Layout>
     </>
   )
 }
