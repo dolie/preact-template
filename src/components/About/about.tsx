@@ -1,6 +1,5 @@
-import { useSignal } from '@preact/signals';
-import { Characters } from '../Characters/characters';
-import { Species } from '../Characters/characters.model';
+import { Characters } from '@/components/Characters/characters';
+import { Species } from '@/components/Characters/characters.model';
 import { species, formInputSpecies } from '@/store/global';
 
 export function About(){
@@ -19,7 +18,7 @@ export function About(){
           value={formInputSpecies.value}
           onChange={onChange}
         >
-          {species.value.map((s) => (
+          {species.value.map(s => (
             <option key={s} value={s}>{s}</option>
           ))}
         </select>

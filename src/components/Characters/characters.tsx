@@ -1,14 +1,17 @@
 import { useQuery } from '@urql/preact';
-import { Character, Species } from './characters.model';
-import getCharacters from './getCharacters.gql';
+import { Species } from './characters.model';
+import { getCharacters } from './getCharacters';
+import { graphql } from '@/gql'
+
+const getgetCharacters = graphql(getCharacters);
 
 export function Characters({ species }: {species: Species}){
   const [result, reexecuteQuery] = useQuery({
-    query: getCharacters,
+    query: getgetCharacters,
     variables: {
       filter: {
         species,
-        status: "Alive"
+        status: 'Alive'
       },
       page: 1
     }
@@ -26,10 +29,10 @@ export function Characters({ species }: {species: Species}){
       </button>
       
       <ul>
-        {data.characters.results.map((c: Character)=> (
-          <li key={c.id}>
-            <img src={c.image} alt={`${c.name  } avatar`} />
-            <p>{c.name}</p>
+        {data?.characters?.results?.map(c => (
+          <li key={c?.id}>
+            <img src={c?.image || ''} alt={`${c?.name  } avatar`} />
+            <p>{c?.name}</p>
           </li>
         ))}
       </ul>

@@ -3,6 +3,23 @@
   "extends": [
     "preact"
   ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "processor": "@graphql-eslint/graphql"
+    },{
+      "files": ["*.graphql"],
+      "parser": "@graphql-eslint/eslint-plugin",
+      "plugins": ["@graphql-eslint"],
+      "rules": {
+        "@graphql-eslint/known-type-names": "error"
+      }
+    }
+  ],
+  "parserOptions": {
+    "operations": "./src/**/*.graphql",
+    "schema": "./schema.graphql"
+  },
   "rules": {
     "indent": ["error", 2],
     "space-infix-ops": "error",
@@ -11,10 +28,14 @@
       "error",
       "prefer-double"
     ],
+    "arrow-parens": ["error", "as-needed"],
+    "arrow-spacing": ["error", { "before": true,
+        "after": true
+      }
+    ],
     "no-invalid-this": "off",
-    "no-unused-vars": "off",
-    "no-use-before-define": "off",
-    "@typescript/no-use-before-define": "off",
+    "no-unused-vars": "error",
+    "no-use-before-define": "error",
     "object-curly-spacing": ["error", "always"],
     "array-bracket-spacing": ["error", "never"],
     "max-len": ["error", {
