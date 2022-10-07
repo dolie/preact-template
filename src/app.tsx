@@ -1,7 +1,5 @@
 // import { useState } from 'preact/hooks'
-import '@/assets/css/reset.css'
-import './app.css'
-
+import './index.css'
 import { render } from 'preact'
 import { Router, Route } from 'preact-router'
 import { Counter } from './components/Counter/counter'

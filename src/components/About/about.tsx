@@ -11,10 +11,13 @@ export function About(){
 
   return (
     <>
-      <p>Page about</p>
-      <form>
-        <label htmlFor="">Sélection de l'espèce</label>
+      <h1>Page about</h1>
+
+      <form class="m-4">
+        <label htmlFor="">Species selection : </label>
+
         <select
+          class="m-4 bg-slate-100 dark:bg-slate-800"
           value={formInputSpecies.value}
           onChange={onChange}
         >
@@ -23,6 +26,7 @@ export function About(){
           ))}
         </select>
       </form>
+
       <Characters species={formInputSpecies.value} />
     </>
   )

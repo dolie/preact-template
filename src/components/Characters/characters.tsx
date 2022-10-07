@@ -24,14 +24,21 @@ export function Characters({ species }: {species: Species}){
 
   return (
     <>
-      <button onClick={() => reexecuteQuery({ requestPolicy: 'network-only' })}>
+      <button
+        class="btn-primary m-4" 
+        onClick={() => reexecuteQuery({ requestPolicy: 'network-only' })}
+      >
         Refetch without cache
       </button>
       
-      <ul>
+      <ul class="max-w-sm mx-auto my-4 pl-20">
         {data?.characters?.results?.map(c => (
-          <li key={c?.id}>
-            <img src={c?.image || ''} alt={`${c?.name  } avatar`} />
+          <li key={c?.id} class="flex my-2 items-center">
+            <img
+              class="rounded w-10 h-10 mx-2"  
+              src={c?.image || ''}
+              alt={`${c?.name  } avatar`}
+            />
             <p>{c?.name}</p>
           </li>
         ))}
